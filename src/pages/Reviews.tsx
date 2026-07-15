@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Star, MapPin, Navigation, QrCode } from "lucide-react";
+import { ExternalLink, Star, MapPin, Navigation, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router";
 import { doctors } from "@/data/doctors";
 import { reviewSources } from "@/data/reviews";
@@ -88,10 +88,10 @@ export default function Reviews() {
                       src: doctor.photoFull,
                     })
                   }
-                  className="flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl bg-[#F5F2ED] hover:bg-[#EDE8E0] active:bg-[#E3DCD0] active:scale-95 transition-all text-xs font-medium text-[#1A1A1A] min-h-[44px]"
+                  className="flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl bg-[#F5F2ED] hover:bg-[#EDE8E0] active:bg-[#E3DCD0] active:scale-95 transition-all text-xs font-medium text-[#1A1A1A] min-h-[44px] whitespace-nowrap"
                 >
-                  <QrCode size={18} className="text-[#8B7355]" />
-                  Карточка
+                  <MessageSquare size={18} className="text-[#8B7355]" />
+                  Оставить отзыв о враче
                 </button>
               </div>
             </motion.div>

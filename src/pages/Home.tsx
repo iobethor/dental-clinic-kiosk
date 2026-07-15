@@ -14,20 +14,14 @@ const iconColors: Record<string, string> = {
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-[#FAFAF8] flex flex-col">
-      <header className="bg-white border-b border-[#E8E4DE] px-6 py-5">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight text-[#1A1A1A]">
-              {CLINIC_NAME}
-            </h1>
-            <p className="text-sm text-[#8B7355] mt-0.5">
-              {CLINIC_SUBTITLE}
-            </p>
-          </div>
-          <div className="text-right text-sm text-[#6B6B6B]">
-            <p>ул. Перерва, 45</p>
-            <p className="font-medium text-[#1A1A1A]">8-495-347-77-07</p>
-          </div>
+      <header className="bg-white border-b border-[#E8E4DE] px-6 py-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1A1A1A]">
+            {CLINIC_NAME}
+          </h1>
+          <p className="text-sm md:text-base text-[#8B7355] mt-1">
+            {CLINIC_SUBTITLE}
+          </p>
         </div>
       </header>
 
@@ -88,9 +82,13 @@ export default function Home() {
       </main>
 
       <footer className="bg-white border-t border-[#E8E4DE] px-6 py-4">
-        <p className="text-center text-xs text-[#8B7355]">
-          ООО «Дентал Имплант» | ул. Перерва, д.45, к.1 | 8-495-347-77-07
-        </p>
+        <div className="max-w-5xl mx-auto flex items-center justify-center gap-x-6 gap-y-1 flex-wrap text-xs text-[#8B7355]">
+          <span className="text-[#B8860B] font-medium">ООО «Дентал Имплант»</span>
+          <span className="hidden sm:inline text-[#D4C8B0]">•</span>
+          <span>ул. Перерва, д.45, к.1</span>
+          <span className="hidden sm:inline text-[#D4C8B0]">•</span>
+          <span className="font-medium text-[#1A1A1A]">8-495-347-77-07</span>
+        </div>
       </footer>
     </div>
   );
