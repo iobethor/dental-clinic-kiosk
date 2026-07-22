@@ -12,7 +12,7 @@ export default function PageHeader({
   backLabel = "На главную",
 }: PageHeaderProps) {
   return (
-    <div className="bg-white border-b border-[#E8E4DE]">
+    <div className="sticky top-0 z-30 bg-white border-b border-[#E8E4DE]">
       <div className="max-w-5xl mx-auto px-4 md:px-6 flex items-center gap-3 min-h-[64px]">
         <button
           onClick={onBack}

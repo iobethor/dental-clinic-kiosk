@@ -6,6 +6,7 @@ import Reviews from "./pages/Reviews";
 import PatientCorner from "./pages/PatientCorner";
 import DocumentViewer from "./pages/DocumentViewer";
 import Works from "./pages/Works";
+import BrowserPage from "./pages/BrowserPage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/patient-corner" element={<PatientCorner />} />
       <Route path="/patient-corner/:id" element={<DocumentViewer />} />
       <Route path="/works" element={<Works />} />
+      <Route path="/browser" element={<BrowserPage />} />
     </Routes>
   );
 }

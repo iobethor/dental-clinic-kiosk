@@ -54,7 +54,7 @@ export const buttons: ButtonConfig[] = [
     id: "site",
     title: "Сайт",
     description: "smile-town.ru",
-    href: "https://smile-town.ru",
+    href: "/browser?url=https://smile-town.ru",
     icon: Globe,
   },
   {
