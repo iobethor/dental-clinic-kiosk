@@ -40,7 +40,7 @@ export const buttons: ButtonConfig[] = [
     id: "price",
     title: "Прайс",
     description: "Стоимость услуг",
-    href: "#price",
+    href: "/price",
     icon: Receipt,
   },
   {
