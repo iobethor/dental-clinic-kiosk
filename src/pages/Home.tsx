@@ -6,8 +6,8 @@ const iconColors: Record<string, string> = {
   doctors: "#B8860B",
   price: "#8B7355",
   consumer: "#6B8E6B",
-  yandex: "#CC4444",
-  "2gis": "#4477CC",
+  site: "#4477CC",
+  works: "#B8860B",
   reviews: "#B8860B",
 };
 

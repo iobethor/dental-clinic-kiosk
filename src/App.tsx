@@ -5,6 +5,7 @@ import DoctorDetail from "./pages/DoctorDetail";
 import Reviews from "./pages/Reviews";
 import PatientCorner from "./pages/PatientCorner";
 import DocumentViewer from "./pages/DocumentViewer";
+import Works from "./pages/Works";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/reviews" element={<Reviews />} />
       <Route path="/patient-corner" element={<PatientCorner />} />
       <Route path="/patient-corner/:id" element={<DocumentViewer />} />
+      <Route path="/works" element={<Works />} />
     </Routes>
   );
 }
