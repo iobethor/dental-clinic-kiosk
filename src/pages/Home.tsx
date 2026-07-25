@@ -14,12 +14,12 @@ const iconColors: Record<string, string> = {
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-[#FAFAF8] flex flex-col">
-      <header className="bg-white border-b border-[#E8E4DE] px-6 py-6">
+      <header className="bg-white border-b border-[#E8E4DE] px-6 py-4">
         <div className="max-w-5xl mx-auto flex justify-center">
           <img
             src="/images/smiletown-logo.png"
             alt="SMILETOWN — центр эстетической стоматологии"
-            className="w-56 md:w-64 h-auto"
+            className="w-64 md:w-72 h-auto"
           />
         </div>
       </header>
