@@ -16,7 +16,7 @@ export interface ButtonConfig {
   icon: LucideIcon;
 }
 
-export const CLINIC_NAME = "Дентал Имплант";
+export const CLINIC_NAME = "SMILETOWN";
 export const CLINIC_SUBTITLE = "Центр эстетической стоматологии";
 
 export const CLINIC_INFO = {
