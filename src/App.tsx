@@ -6,6 +6,7 @@ import Reviews from "./pages/Reviews";
 import PatientCorner from "./pages/PatientCorner";
 import DocumentViewer from "./pages/DocumentViewer";
 import Works from "./pages/Works";
+import WorkDetail from "./pages/WorkDetail";
 import Price from "./pages/Price";
 import BrowserPage from "./pages/BrowserPage";
 import Admin from "./pages/Admin";
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/patient-corner" element={<PatientCorner />} />
       <Route path="/patient-corner/:id" element={<DocumentViewer />} />
       <Route path="/works" element={<Works />} />
+      <Route path="/works/:id" element={<WorkDetail />} />
       <Route path="/price" element={<Price />} />
       <Route path="/browser" element={<BrowserPage />} />
       <Route path="/admin" element={<Admin />} />
