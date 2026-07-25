@@ -65,20 +65,29 @@ export default function Reviews() {
               className="bg-white rounded-2xl border border-[#E8E4DE] p-5"
             >
               <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-[#1A1A1A]">
-                    {doctor.fullName}
-                  </h3>
-                  <p className="text-xs text-[#8B7355] mt-0.5">
-                    {doctor.specialty}
-                  </p>
-                  <div className="flex items-center gap-1 mt-2 text-[#B8860B]">
-                    <Star size={14} fill="#B8860B" />
-                    <Star size={14} fill="#B8860B" />
-                    <Star size={14} fill="#B8860B" />
-                    <Star size={14} fill="#B8860B" />
-                    <Star size={14} fill="#B8860B" />
-                    <span className="text-xs text-[#6B6B6B] ml-1">5.0</span>
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 rounded-full bg-[#F5F2ED] overflow-hidden shrink-0">
+                    <img
+                      src={doctor.photo}
+                      alt={doctor.fullName}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#1A1A1A]">
+                      {doctor.fullName}
+                    </h3>
+                    <p className="text-xs text-[#8B7355] mt-0.5">
+                      {doctor.specialty}
+                    </p>
+                    <div className="flex items-center gap-1 mt-2 text-[#B8860B]">
+                      <Star size={14} fill="#B8860B" />
+                      <Star size={14} fill="#B8860B" />
+                      <Star size={14} fill="#B8860B" />
+                      <Star size={14} fill="#B8860B" />
+                      <Star size={14} fill="#B8860B" />
+                      <span className="text-xs text-[#6B6B6B] ml-1">5.0</span>
+                    </div>
                   </div>
                 </div>
                 <button
