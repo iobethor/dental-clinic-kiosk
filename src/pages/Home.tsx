@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-import { buttons } from "@/config";
+import { buttons, CLINIC_NAME, CLINIC_SUBTITLE } from "@/config";
 
 const iconColors: Record<string, string> = {
   doctors: "#B8860B",
@@ -14,13 +14,14 @@ const iconColors: Record<string, string> = {
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-[#FAFAF8] flex flex-col">
-      <header className="bg-white border-b border-[#E8E4DE] px-6 py-4">
-        <div className="max-w-5xl mx-auto flex justify-center">
-          <img
-            src="/images/smiletown-logo.png"
-            alt="SMILETOWN — центр эстетической стоматологии"
-            className="w-64 md:w-72 h-auto"
-          />
+      <header className="bg-white border-b border-[#E8E4DE] px-6 py-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1A1A1A]">
+            {CLINIC_NAME}
+          </h1>
+          <p className="text-sm md:text-base text-[#8B7355] mt-1">
+            {CLINIC_SUBTITLE}
+          </p>
         </div>
       </header>
 

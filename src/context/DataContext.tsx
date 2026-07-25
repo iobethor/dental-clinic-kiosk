@@ -39,7 +39,7 @@ interface DataContextValue {
 }
 
 const defaultClinic: ClinicData = {
-  name: "SMILETOWN",
+  name: "Дентал Имплант",
   subtitle: "Центр эстетической стоматологии",
   address: "109341, г. Москва, ул. Перерва, д.45, к.1",
   phone: "8-495-347-77-07",

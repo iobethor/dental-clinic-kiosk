@@ -36,7 +36,7 @@ export default function Price() {
 
       <main className="flex-1 max-w-3xl mx-auto w-full px-4 md:px-6 py-6 md:py-8">
         <p className="text-sm text-[#6B6B6B] mb-6">
-          Стоимость услуг в центре эстетической стоматологии SMILETOWN
+          Стоимость услуг в центре эстетической стоматологии «Дентал Имплант»
         </p>
 
         <div className="space-y-3">
