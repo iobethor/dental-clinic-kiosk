@@ -40,7 +40,7 @@ export default function DoctorDetail() {
           animate={{ opacity: 1, y: 0 }}
         >
           <div className="flex items-center gap-5 mb-6">
-            <div className="w-24 h-24 rounded-full bg-[#F5F2ED] overflow-hidden shrink-0">
+            <div className="w-28 h-28 rounded-full bg-[#F5F2ED] overflow-hidden shrink-0 ring-2 ring-[#E8E4DE]">
               <img
                 src={doctor.photo}
                 alt={doctor.fullName}
