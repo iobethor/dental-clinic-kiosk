@@ -22,21 +22,21 @@ export default function Doctors() {
               onClick={() => navigate(`/doctors/${doctor.id}`)}
               className="bg-white rounded-2xl border border-[#E8E4DE] overflow-hidden text-left w-full active:scale-[0.98] transition-all"
             >
-              <div className="aspect-[4/3] bg-[#F5F2ED] overflow-hidden">
-                <img
-                  src={doctor.photo}
-                  alt={doctor.fullName}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-[#1A1A1A] leading-snug">
+              <div className="flex flex-col items-center pt-6 pb-4 px-4">
+                <div className="w-20 h-20 rounded-full bg-[#F5F2ED] overflow-hidden mb-3 shrink-0">
+                  <img
+                    src={doctor.photo}
+                    alt={doctor.fullName}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-semibold text-[#1A1A1A] leading-snug text-center">
                   {doctor.fullName}
                 </h3>
-                <p className="text-xs text-[#8B7355] mt-1 leading-relaxed">
+                <p className="text-xs text-[#8B7355] mt-1 leading-relaxed text-center">
                   {doctor.specialty}
                 </p>
-                <div className="flex items-center gap-2 mt-3">
+                <div className="flex items-center gap-2 mt-3 justify-center">
                   {doctor.isDirector && (
                     <span className="flex items-center gap-1 text-[10px] font-medium text-[#B8860B] bg-[#FDF8F0] px-2 py-0.5 rounded-full">
                       <Star size={10} /> Основатель

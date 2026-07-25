@@ -39,10 +39,21 @@ export default function DoctorDetail() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
-            {doctor.fullName}
-          </h1>
-          <p className="text-[#8B7355] mt-1">{doctor.specialty}</p>
+          <div className="flex items-center gap-5 mb-6">
+            <div className="w-24 h-24 rounded-full bg-[#F5F2ED] overflow-hidden shrink-0">
+              <img
+                src={doctor.photo}
+                alt={doctor.fullName}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h1 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
+                {doctor.fullName}
+              </h1>
+              <p className="text-[#8B7355] mt-1">{doctor.specialty}</p>
+            </div>
+          </div>
 
           <div className="flex flex-wrap gap-3 mt-4">
             {doctor.isDirector && (
