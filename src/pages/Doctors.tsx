@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { useNavigate } from "react-router";
 import { doctors } from "@/data/doctors";
 import PageHeader from "@/components/PageHeader";
