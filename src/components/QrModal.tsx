@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink } from "lucide-react";
+import { X } from "lucide-react";
 
 interface QrModalProps {
   open: boolean;
@@ -53,27 +53,6 @@ export default function QrModal({
                 alt="Карточка врача с QR-кодом"
                 className="w-full h-auto max-h-[55vh] object-contain rounded-xl"
               />
-            </div>
-
-            <div className="mt-4 flex gap-2">
-              <a
-                href="https://yandex.ru/profile/20786059493"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-xl bg-[#F5F2ED] text-xs font-medium text-[#1A1A1A] hover:bg-[#EDE8E0] transition-colors active:scale-95"
-              >
-                <ExternalLink size={14} />
-                Яндекс.Карты
-              </a>
-              <a
-                href="https://go.2gis.com/516st"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-1.5 py-3 rounded-xl bg-[#F5F2ED] text-xs font-medium text-[#1A1A1A] hover:bg-[#EDE8E0] transition-colors active:scale-95"
-              >
-                <ExternalLink size={14} />
-                2ГИС
-              </a>
             </div>
           </motion.div>
         </motion.div>
