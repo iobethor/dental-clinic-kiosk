@@ -52,6 +52,35 @@ export default function Reviews() {
           </div>
         </motion.div>
 
+        <motion.div
+          className="bg-white rounded-2xl border border-[#E8E4DE] p-6 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">
+            Отзывы на Яндекс.Картах
+          </h2>
+          <div
+            style={{
+              width: "100%",
+              height: "500px",
+              overflow: "hidden",
+              position: "relative",
+            }}
+          >
+            <iframe
+              style={{
+                width: "100%",
+                height: "100%",
+                border: "1px solid #e6e6e6",
+                borderRadius: "8px",
+                boxSizing: "border-box",
+              }}
+              src="https://yandex.ru/maps-reviews-widget/20786059493?comments"
+            />
+          </div>
+        </motion.div>
+
         <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">
           Наши врачи
         </h2>
