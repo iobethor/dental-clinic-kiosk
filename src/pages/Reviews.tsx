@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Star, MapPin, Navigation, MessageSquare } from "lucide-react";
+import { ExternalLink, Star, MapPin, Navigation, MessageSquare, X } from "lucide-react";
 import { useNavigate } from "react-router";
 import { doctors } from "@/data/doctors";
 import { reviewSources } from "@/data/reviews";
@@ -12,6 +12,10 @@ export default function Reviews() {
   const [modalTarget, setModalTarget] = useState<{
     name: string;
     src: string;
+  } | null>(null);
+  const [qrSource, setQrSource] = useState<{
+    name: string;
+    url: string;
   } | null>(null);
 
   return (
@@ -32,7 +36,10 @@ export default function Reviews() {
               <button
                 key={source.name}
                 onClick={() =>
-                  navigate(`/browser?url=${encodeURIComponent(source.url)}&back=/reviews`)
+                  setQrSource({
+                    name: source.name,
+                    url: source.url,
+                  })
                 }
                 className="flex items-center gap-3 p-4 rounded-xl bg-[#F5F2ED] hover:bg-[#EDE8E0] active:bg-[#E3DCD0] active:scale-[0.98] transition-all min-h-[52px] text-left w-full"
               >
@@ -49,35 +56,6 @@ export default function Reviews() {
                 <ExternalLink size={16} className="text-[#8B7355]" />
               </button>
             ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="bg-white rounded-2xl border border-[#E8E4DE] p-6 mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">
-            Отзывы на Яндекс.Картах
-          </h2>
-          <div
-            style={{
-              width: "100%",
-              height: "500px",
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
-            <iframe
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "1px solid #e6e6e6",
-                borderRadius: "8px",
-                boxSizing: "border-box",
-              }}
-              src="https://yandex.ru/maps-reviews-widget/20786059493?comments"
-            />
           </div>
         </motion.div>
 
@@ -144,6 +122,48 @@ export default function Reviews() {
           doctorName={modalTarget.name}
           imgSrc={modalTarget.src}
         />
+      )}
+
+      {qrSource && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-6 py-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setQrSource(null)}
+        >
+          <motion.div
+            className="bg-white rounded-3xl p-6 md:p-8 w-full shadow-2xl text-center"
+            style={{ maxWidth: "400px" }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-semibold text-[#1A1A1A]">Оставить отзыв</h3>
+              <button
+                onClick={() => setQrSource(null)}
+                className="w-8 h-8 rounded-full bg-[#F5F2ED] flex items-center justify-center active:scale-90 transition-transform shrink-0"
+              >
+                <X size={16} className="text-[#6B6B6B]" />
+              </button>
+            </div>
+            <p className="text-sm text-[#6B6B6B] mt-1">
+              Наведите камеру телефона на QR-код
+            </p>
+            <div className="mt-5 bg-[#F5F2ED] rounded-2xl p-4 inline-block">
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=10&data=${encodeURIComponent(qrSource.url)}`}
+                alt={`QR-код: ${qrSource.name}`}
+                className="w-56 h-56"
+              />
+            </div>
+            <p className="mt-4 text-xs text-[#8B7355]">
+              {qrSource.name}
+            </p>
+          </motion.div>
+        </motion.div>
       )}
     </div>
   );
