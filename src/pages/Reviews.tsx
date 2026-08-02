@@ -29,12 +29,12 @@ export default function Reviews() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {reviewSources.map((source) => (
-              <a
+              <button
                 key={source.name}
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 rounded-xl bg-[#F5F2ED] hover:bg-[#EDE8E0] active:bg-[#E3DCD0] active:scale-[0.98] transition-all min-h-[52px]"
+                onClick={() =>
+                  navigate(`/browser?url=${encodeURIComponent(source.url)}&back=/reviews`)
+                }
+                className="flex items-center gap-3 p-4 rounded-xl bg-[#F5F2ED] hover:bg-[#EDE8E0] active:bg-[#E3DCD0] active:scale-[0.98] transition-all min-h-[52px] text-left w-full"
               >
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0">
                   {source.name.includes("Яндекс") ? (
@@ -47,7 +47,7 @@ export default function Reviews() {
                   {source.name}
                 </span>
                 <ExternalLink size={16} className="text-[#8B7355]" />
-              </a>
+              </button>
             ))}
           </div>
         </motion.div>
