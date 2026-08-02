@@ -6,7 +6,10 @@ import {
   ChevronRight,
   Phone,
   MapPin,
+  Award,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import { documents } from "@/data/documents";
 import PageHeader from "@/components/PageHeader";
@@ -23,8 +26,15 @@ const DOC_ROUTES: Record<string, string> = {
   "consumer-rights": "/patient-corner/consumer-rights",
 };
 
+const licenses = [
+  "/docs/doc-1.jpg",
+  "/docs/doc-2.jpg",
+  "/docs/doc-3.jpg",
+];
+
 export default function PatientCorner() {
   const navigate = useNavigate();
+  const [preview, setPreview] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen w-full bg-[#FAFAF8] flex flex-col">
@@ -70,6 +80,36 @@ export default function PatientCorner() {
           className="mt-6 bg-white rounded-2xl border border-[#E8E4DE] p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <h2 className="font-semibold text-[#1A1A1A] mb-4">
+            Лицензии и документы
+          </h2>
+          <div className="grid grid-cols-3 gap-3">
+            {licenses.map((src, index) => (
+              <button
+                key={src}
+                onClick={() => setPreview(src)}
+                className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F5F2ED] active:scale-[0.97] transition-transform cursor-pointer"
+              >
+                <img
+                  src={src}
+                  alt={`Документ ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-1.5 py-2 bg-gradient-to-t from-black/50 to-transparent text-white text-[10px] font-medium">
+                  <Award size={12} />
+                  Увеличить
+                </div>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="mt-6 bg-white rounded-2xl border border-[#E8E4DE] p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
           <h2 className="font-semibold text-[#1A1A1A] mb-4">
@@ -101,6 +141,36 @@ export default function PatientCorner() {
           </div>
         </motion.div>
       </main>
+
+      {preview && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setPreview(null)}
+        >
+          <motion.div
+            className="relative w-full h-full max-w-2xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setPreview(null)}
+              className="absolute -top-2 -right-2 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center active:scale-90 transition-transform"
+            >
+              <X size={20} className="text-[#1A1A1A]" />
+            </button>
+            <img
+              src={preview}
+              alt="Документ"
+              className="w-full h-full object-contain rounded-xl"
+            />
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }
