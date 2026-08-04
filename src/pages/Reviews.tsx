@@ -28,7 +28,7 @@ export default function Reviews() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">
+          <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4 text-center">
             Оставить отзыв на площадках
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
@@ -59,7 +59,7 @@ export default function Reviews() {
           </div>
         </motion.div>
 
-        <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">
+        <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4 text-center">
           Наши врачи
         </h2>
         <div className="flex flex-col gap-3">

@@ -82,7 +82,7 @@ export default function PatientCorner() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <h2 className="font-semibold text-[#1A1A1A] mb-4">
+          <h2 className="font-semibold text-[#1A1A1A] mb-4 text-center">
             Лицензии и документы
           </h2>
           <div className="grid grid-cols-3 gap-3">
@@ -112,7 +112,7 @@ export default function PatientCorner() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <h2 className="font-semibold text-[#1A1A1A] mb-4">
+          <h2 className="font-semibold text-[#1A1A1A] mb-4 text-center">
             Информация о клинике
           </h2>
           <div className="space-y-3 text-sm text-[#6B6B6B]">
