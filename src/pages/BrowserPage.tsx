@@ -1,8 +1,6 @@
 import { useNavigate, useSearchParams } from "react-router";
 import { ChevronLeft, ExternalLink } from "lucide-react";
 
-const PROXY = "https://api.allorigins.win/raw?url=";
-
 export default function BrowserPage() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
@@ -30,7 +28,7 @@ export default function BrowserPage() {
         </div>
       </div>
       <iframe
-        src={`${PROXY}${encodeURIComponent(url)}`}
+        src={url}
         className="flex-1 w-full border-0"
         title="Внешний сайт"
         sandbox="allow-same-origin allow-forms allow-scripts allow-popups"
